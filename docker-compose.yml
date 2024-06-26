@@ -11,6 +11,8 @@ services:
       - 8080:8080
     depends_on:
       - db
+    networks:
+      - default
     
   db:
     container_name: cer3_db
@@ -21,6 +23,8 @@ services:
      POSTGRES_USER: postgres
      POSTGRES_DB: cer3
      POSTGRES_PASSWORD: miau123.
+    networks:
+      - default
 
 networks:
   default:
