@@ -11,3 +11,4 @@ class Pokemon(models.Model):
     pokedex_number = models.IntegerField()
     primary_type = models.CharField(max_length=15)
     secondary_type = models.CharField(max_length=15, null=True, blank=True)
+    pokemon_image = models.ImageField(upload_to='pokemon_images/', null=True, blank=True)

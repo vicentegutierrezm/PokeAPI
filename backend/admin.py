@@ -10,7 +10,7 @@ class NumberAdmin(admin.ModelAdmin):
 
 class PokemonAdmin(admin.ModelAdmin):
     list_display = ('name', 'pokedex_number', 'primary_type')  # Campos que quieres mostrar en la lista
-    search_fields = ('name', 'pokedex_number')  # Campos por los cuales quieres permitir la búsqueda
+    search_fields = ('name', 'pokedex_number', 'primary_type')  # Campos por los cuales quieres permitir la búsqueda
 
 admin.site.register(Number, NumberAdmin)
 admin.site.register(Pokemon, PokemonAdmin)
