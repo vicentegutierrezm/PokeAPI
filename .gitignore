@@ -2,4 +2,4 @@ db.sqlite3
 
 *.pyc
 
-cer3/__pycache__/.
+cert3/cer3/__pycache__/.
