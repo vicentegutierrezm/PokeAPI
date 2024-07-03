@@ -2,5 +2,4 @@ db.sqlite3
 
 *.pyc
 
-/home/chup/cer3/cer3/__pycache__/
-
+cer3/__pycache__/.
