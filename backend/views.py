@@ -27,16 +27,13 @@ class PokemonViewSet(viewsets.ModelViewSet):
     queryset = Pokemon.objects.all()
     serializer_class = PokemonSerializer
 
-    # def get_queryset(self):
-    #     """
-    #     Opcionalmente restringe los números devueltos al valor de 'number' que
-    #     sea igual a 10, pasando un parámetro de consulta `number=10` en la URL.
-    #     """
-    #     queryset = Number.objects.all()
-    #     number = self.request.query_params.get('number', None)
-    #     if number is not None:
-    #         queryset = queryset.filter(number=number)
-    #     return queryset
+    def get_queryset(self):
+
+        queryset = Pokemon.objects.all()
+        pokedex_number = self.request.query_params.get('pokedex_number', None)
+        if pokedex_number is not None:
+            queryset = queryset.filter(pokedex_number=pokedex_number)
+        return queryset
 
 class CreateRandomNumber(generics.CreateAPIView):
     serializer_class = NumberSerializer
