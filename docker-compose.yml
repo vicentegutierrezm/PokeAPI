@@ -26,9 +26,23 @@ services:
     networks:
       - default
 
+  react: 
+    container_name: cer3_react
+    build:
+      context: /home/chup/cert3/react
+      dockerfile: Dockerfile
+    command: npm start
+    volumes:
+      - ./react/:/app/
+    ports:
+      - '4400:3000'
+    networks:
+      - default
+
 networks:
   default:
-    name: cer3
+    external:
+      name: cer3
 
 
   
