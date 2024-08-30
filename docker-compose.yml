@@ -11,8 +11,6 @@ services:
       - 8080:8080
     depends_on:
       - db
-    networks:
-      - default
     
   db:
     container_name: cer3_db
@@ -23,8 +21,6 @@ services:
      POSTGRES_USER: postgres
      POSTGRES_DB: cer3
      POSTGRES_PASSWORD: miau123.
-    networks:
-      - default
 
   react: 
     container_name: cer3_react
@@ -36,13 +32,3 @@ services:
       - ./react/:/app/
     ports:
       - '4400:3000'
-    networks:
-      - default
-
-networks:
-  default:
-    external:
-      name: cer3
-
-
-  
